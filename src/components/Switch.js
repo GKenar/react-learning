@@ -5,12 +5,12 @@ export class Switch extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      buttonSelected: -1
+      buttonSelected: 0
     };
   }
 
   render() {
-    const { data, onSwitchChanged } = this.props;
+    const { data, onSwitchChanged, enable } = this.props;
 
     return (
       <div>
@@ -18,6 +18,7 @@ export class Switch extends Component {
           <SwitchElement
             key={item.id}
             onClick={() => {
+              if (!enable) return;
               this.setState({ buttonSelected: item.id });
               onSwitchChanged(item.id);
             }}

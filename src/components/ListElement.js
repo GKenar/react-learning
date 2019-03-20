@@ -1,8 +1,8 @@
 import React from "react";
 
-export const ListElement = ({ id, name, age, avatar }) => {
+export const ListElement = ({ id, name, age, avatar, onClick }) => {
   return (
-    <li>
+    <li onClick={onClick} style={{ border: "1px solid grey" }}>
       <div className="list-element">
         <h3>{`${name} ${age}`}</h3>
         <img
