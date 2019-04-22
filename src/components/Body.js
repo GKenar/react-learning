@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { List } from "./List";
 import { Switch } from "./Switch";
+import ReduxCounter from "./ReduxCounter";
 
 const studentsList = [
   {
@@ -77,6 +78,7 @@ export default class Body extends Component {
   render() {
     return (
       <div className="body">
+        <ReduxCounter />
         <List data={studentsList} />
         <Switch
           data={switchData}
